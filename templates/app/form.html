@@ -1,0 +1,13 @@
+{% extends "app/base.html" %}
+
+{% block contenido %}
+
+<h2>{{ titulo }}</h2>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button>Guardar</button>
+</form>
+
+{% endblock %}

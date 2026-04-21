@@ -1,0 +1,42 @@
+{% extends "app/base.html" %}
+
+{% block contenido %}
+
+<h2>Buscar: {{ query }}</h2>
+
+<form method="GET" class="mb-4">
+    <input type="text" name="modelo" class="form-control" placeholder="Buscar modelo...">
+    <button class="btn btn-primary mt-2">Buscar</button>
+</form>
+
+<!-- NUEVOS -->
+<h3>Nuevos</h3>
+<ul class="list-group mb-3">
+{% for n in nuevos %}
+    <li class="list-group-item">{{ n.tipo }} - {{ n.modelo }} - {{ n.antiguedad }}</li>
+{% empty %}
+    <li class="list-group-item">Sin resultados</li>
+{% endfor %}
+</ul>
+
+<!-- USADOS -->
+<h3>Usados</h3>
+<ul class="list-group mb-3">
+{% for u in usados %}
+    <li class="list-group-item">{{ u.tipo }} - {{ u.modelo }} - {{ u.antiguedad }}</li>
+{% empty %}
+    <li class="list-group-item">Sin resultados</li>
+{% endfor %}
+</ul>
+
+<!-- SE BUSCA -->
+<h3>Se busca</h3>
+<ul class="list-group">
+{% for b in busca %}
+    <li class="list-group-item">{{ b.tipo }} - {{ b.modelo }} - {{ b.antiguedad }}</li>
+{% empty %}
+    <li class="list-group-item">Sin resultados</li>
+{% endfor %}
+</ul>
+
+{% endblock %}

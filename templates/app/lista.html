@@ -1,0 +1,15 @@
+{% extends "app/base.html" %}
+
+{% block contenido %}
+
+<h2>{{ titulo }}</h2>
+
+<ul class="list-group">
+    {% for d in datos %}
+        <li class="list-group-item">
+            {{ d.tipo }} - {{ d.modelo }} - {{ d.antiguedad }}
+        </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
